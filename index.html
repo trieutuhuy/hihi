@@ -11,12 +11,27 @@
     </style>
     </script>
     <iframe id="hidden_iframe" name="hidden_iframe" onload="if(submitted){alert('Thông tin của công chúa đã được lưu trữ, mọi thứ sẽ được bảo mật!!!');}" style="display: none;"></iframe>
-  </head>
+  </script
+    function validateForm() {
+      var HọvàTên = document.forms["HọvàTên"]["HọvàTên"].value;
+      var height = document.forms["myForm"]["height"].value;
+      var weight = document.forms["myForm"]["weight"].value;
+      var shoeSize = document.forms["myForm"]["shoeSize"].value;
+      var measurement1 = document.forms["myForm"]["measurement1"].value;
+      var measurement2 = document.forms["myForm"]["measurement2"].value;
+      var measurement3 = document.forms["myForm"]["measurement3"].value;
+    
+      if (HọvàTên == "" || height == "" || weight == "" || shoeSize == "" || measurement1 == "" || measurement2 == "" || measurement3 == "") {
+        alert("Vui lòng nhập đầy đủ thông tin");
+        return false;
+      }
+    }></script>
+    </head>
   <body>
     <h1>Nhập thông tin của bạn:</h1>
     <form onsubmit="submitted=true;" target="hidden_iframe" class="text-left"  role="form" id="ss-form" method="GET" action="https://script.google.com/macros/s/AKfycbzvrf_7i8eKHNyeNeueh_tzdO-UJhtVheRf4PeTsz8_x0vc3dQnWgIUSkM-nQbUnvnh/exec">
-      <label for="hovaten">Họ và tên:</label>
-      <input type="text" id="hovaten" name="HọvàTên"><br>
+      <label for="HọvàTên">Họ và tên:</label>
+      <input type="text" id="HọvàTên" name="HọvàTên"><br>
 
       <label for="chieucao">Chiều cao (cm) :</label>
       <input type="number" id="chieucao" name="Chiềucao"><br>
@@ -37,7 +52,18 @@
         <option value="43">43</option>
         <option value="44">44</option>
       </select><br>
-
+      <div>
+        <label for="vong1">Số đo vòng 1:</label>
+        <input type="number" id="vong1" name="vong1">
+      </div>
+      <div>
+        <label for="vong2">Số đo vòng 2:</label>
+        <input type="number" id="vong2" name="vong2">
+      </div>
+      <div>
+        <label for="vong3">Số đo vòng 3:</label>
+        <input type="number" id="vong3" name="vong3">
+      </div>
       <button type="submit">Gửi thông tin</button>
     </form>
   </body>
